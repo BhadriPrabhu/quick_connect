@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "QuickConnect",
+  "permissions": ["storage", "activeTab"],
+  "version": "1.0",
+  "description": "A Chrome extension to quickly connect to Wi-Fi networks.",
+  "content_scripts": [
+    {
+      "matches": ["http://172.16.0.200:2280/*"],
+      "js": ["dist/assets/content.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+.quick-connect-card {
+  background: rgba(10, 25, 47, 0.95); /* Deep navy for contrast */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 204, 0, 0.3); /* Subtle yellow border */
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.qc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qc-icon-wrapper {
+  background: #ffcc00;
+  color: #0a192f;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qc-text h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.qc-text p {
+  margin: 2px 0 0 0;
+  color: #8892b0;
+  font-size: 12px;
+}
+
+.qc-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ffcc00;
+  color: #0a192f;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+}
+
+.qc-button:hover {
+  background: #e6b800;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+}
+
+.qc-button.connecting {
+  background: #112240;
+  color: #64ffda;
+  cursor: not-allowed;
+}
+
+.qc-button.error {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* Spinner for the loading state */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(100, 255, 218, 0.3);
+  border-top-color: #64ffda;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
