@@ -50,24 +50,28 @@ function App() {
     if (isWelcomePage) {
       console.log("QuickConnect: Process Finished Successfully.");
       chrome.storage.local.set({ isAutoConnecting: false });
+      setIsConnecting(false);
       return;
     }
 
     if (isAlreadyLoggedIn) {
       console.log("QuickConnect: Already logged in. Ending process.");
       chrome.storage.local.set({ isAutoConnecting: false })
+      setIsConnecting(false);
       return;
     }
 
     if (isLoginSuccessful) {
       console.log("QuickConnect: Login successful. Ending process.");
-      chrome.storage.local.set({ isAutoConnecting: false })
+      chrome.storage.local.set({ isAutoConnecting: false });
+      setIsConnecting(false);
       return;
     }
 
     if (isTryAgain) {
       console.log("QuickConnect: Login failed. Incorrect User name/Password.");
-      chrome.storage.local.set({ isAutoConnecting: false })
+      chrome.storage.local.set({ isAutoConnecting: false });
+      setIsConnecting(false);
       setHelper("Credentials incorrect. Please update in Settings.");
       return;
     }
