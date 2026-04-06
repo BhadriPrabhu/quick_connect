@@ -9,8 +9,11 @@ const initExtension = () => {
   const hasDeleteBtn = document.querySelector('input[value*="Delete"]');
   const hasGoToLogin = document.querySelector('input[value*="Go to Login"]');
   const hasWelcome = document.body.innerText.includes("Welcome! You are logged in");
+  const hasAlreadyLoggedIn = document.body.innerText.includes("Already logged in.");
+  const hasLoginSuccessful = document.body.innerText.includes("Login successful.");
+  const hasLoginFailed = document.body.innerText.includes("Incorrect User Name / Password.");
 
-  if (!(hasLoginFields || hasDeleteBtn || hasGoToLogin || hasWelcome)) {
+  if (!(hasLoginFields || hasDeleteBtn || hasGoToLogin || hasWelcome || hasAlreadyLoggedIn || hasLoginSuccessful || hasLoginFailed)) {
     return;
   }
 
