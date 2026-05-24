@@ -23,3 +23,11 @@ QuickConnect is a Chrome extension built with React and Vite that helps automate
 - src/settingsModel.jsx — modal for storing credentials
 - src/content/index.jsx — content script injected into the target portal page
 - manifest.json — extension configuration
+
+## Usage
+
+1. Open the Wi-Fi login portal page that matches the extension target.
+2. Click the extension icon.
+3. Open Settings and save your BIT username and password.
+4. Click Connect to start automation.
+5. Use Stop Automation at any time to halt the process.
