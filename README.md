@@ -31,3 +31,9 @@ QuickConnect is a Chrome extension built with React and Vite that helps automate
 3. Open Settings and save your BIT username and password.
 4. Click Connect to start automation.
 5. Use Stop Automation at any time to halt the process.
+
+## Notes
+
+This extension is currently configured to inject its content script on the portal URL:
+
+- http://172.16.0.200:2280/*
