@@ -37,3 +37,7 @@ QuickConnect is a Chrome extension built with React and Vite that helps automate
 This extension is currently configured to inject its content script on the portal URL:
 
 - http://172.16.0.200:2280/*
+
+## Author
+
+Crafted by Bhadri Prabhu K
