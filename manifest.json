@@ -3,7 +3,7 @@
   "name": "QuickConnect",
   "permissions": ["storage", "activeTab"],
   "version": "1.0",
-  "description": "A Chrome extension to quickly connect to Wi-Fi networks.",
+  "description": "A Chrome extension to quickly connect to Wi-Fi networks and this was crafted by Bhadri Prabhu K",
   "content_scripts": [
     {
       "matches": ["http://172.16.0.200:2280/*"],
