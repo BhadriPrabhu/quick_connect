@@ -7,14 +7,14 @@ QuickConnect is a Chrome extension built with React and Vite that helps automate
 ```mermaid
 graph TD
     User[User]
-    Browser[Chrome Browser (Manifest V3)]
-    Extension[QuickConnect Extension (JavaScript + Chrome APIs)]
-    Build[Vite Build (Vite + React plugin)]
-    Bundle[Content Script Bundle (React + JavaScript)]
-    App[QuickConnect UI and Automation (React)]
-    Settings[Credential Settings Modal (React)]
-    Storage[(Chrome Local Storage (Chrome Storage API))]
-    Portal[BIT Wi-Fi Login Portal (HTTP + HTML forms)]
+    Browser["Chrome Browser (Manifest V3)"]
+    Extension["QuickConnect Extension (JavaScript + Chrome APIs)"]
+    Build["Vite Build (Vite + React plugin)"]
+    Bundle["Content Script Bundle (React + JavaScript)"]
+    App["QuickConnect UI and Automation (React)"]
+    Settings["Credential Settings Modal (React)"]
+    Storage[("Chrome Local Storage (Chrome Storage API)")]
+    Portal["BIT Wi-Fi Login Portal (HTTP + HTML forms)"]
 
     Build -->|Bundles JSX into dist/assets/content.js| Bundle
     Bundle -->|Packaged and registered by manifest.json| Extension
