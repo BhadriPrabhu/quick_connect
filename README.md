@@ -2,6 +2,36 @@
 
 QuickConnect is a Chrome extension built with React and Vite that helps automate the Wi-Fi login flow for the BIT portal. It detects the login page, fills in saved credentials, and can automatically submit the form for you.
 
+## System Architecture
+
+```mermaid
+graph TD
+    User[User]
+    Browser[Chrome Browser (Manifest V3)]
+    Extension[QuickConnect Extension (JavaScript + Chrome APIs)]
+    Build[Vite Build (Vite + React plugin)]
+    Bundle[Content Script Bundle (React + JavaScript)]
+    App[QuickConnect UI and Automation (React)]
+    Settings[Credential Settings Modal (React)]
+    Storage[(Chrome Local Storage (Chrome Storage API))]
+    Portal[BIT Wi-Fi Login Portal (HTTP + HTML forms)]
+
+    Build -->|Bundles JSX into dist/assets/content.js| Bundle
+    Bundle -->|Packaged and registered by manifest.json| Extension
+    Extension -->|Injects on the matching portal URL at document end| Browser
+    Browser -->|Loads portal page over HTTP| Portal
+    Portal -->|Returns HTML form and status content over HTTP| Browser
+    Browser -->|Mounts content script UI into matching page DOM| App
+    User -->|Interacts with controls| App
+    App -->|Opens and saves credentials in| Settings
+    App -->|Reads and writes credentials and automation state via Chrome Storage API| Storage
+    Settings -->|Reads and writes credentials via Chrome Storage API| Storage
+    App -->|Finds fields, fills credentials, and clicks controls via DOM| Portal
+    Portal -->|Form submission and login result over HTTP| Browser
+```
+
+The extension runs its React interface and automation in the matched portal page. Credential and automation state are stored locally by Chrome; the project has no separate application server or remote database.
+
 This project is not meant to hack or misuse any college system. It is simply an automation helper for the official Wi-Fi user login page and is intended for convenience and personal use.
 
 ## Features
